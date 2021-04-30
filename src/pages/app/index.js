@@ -15,7 +15,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import RoutesApp from './routesApp';
-
+import { Avatar, Box, Card, CardContent } from '@material-ui/core';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import FormatAlignCenterIcon from '@material-ui/icons/FormatAlignCenter';
@@ -54,6 +54,17 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  name: {
+    textAlign: 'center',
+    padding: 20
+  },
+  img: {
+    margin: 'auto',
+    alignSelf: 'center'
+  },
+  text: {
+    paddingTop: 10
+  }
 }));
 
 function App(props) {
@@ -69,6 +80,13 @@ function App(props) {
   const drawer = (
     <div>
       <div className={classes.toolbar} />
+      <Divider />
+      <div className={classes.name}>
+        <Avatar className={classes.img} src={"https://material-kit-react.devias.io/static/images/avatars/avatar_6.png"}/>
+        <Typography className={classes.text} color="textPrimary" variant="subtitle1">
+          Bem vinda, Maria
+        </Typography>
+      </div>
       <Divider />
       <List>
         <ListItem button component={Link} to={`/app`}>
